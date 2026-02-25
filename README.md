@@ -67,7 +67,7 @@ Provides a high-level summary of league standings and key performance indicators
 
 ![03_performance_drivers_analysis](04_images/03_performance_drivers_analysis.png)
 
-Explores statistical relationships and drivers of success, including goal metrics, possession, and efficiency indicators.
+Explores statistical relationships and drivers of success, including shot conversion, shot quality, and defensive resiliency.
 
 ---
 
