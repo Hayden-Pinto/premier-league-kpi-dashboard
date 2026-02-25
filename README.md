@@ -79,7 +79,7 @@ Highlights analytical conclusions derived from KPI comparisons and team performa
 
 ---
 
-##🚀 Outcome
+## 🚀 Outcome
 
 This project demonstrates the ability to move from raw datasets to actionable insight using a structured analytical workflow:
 
