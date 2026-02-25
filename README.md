@@ -26,7 +26,8 @@ The analytical workflow follows a structured transformation process:
 - Season-level metrics were aggregated per team.
 - A league table was constructed and ordered by points.
 - Custom KPIs were engineered for analytical use in Power BI.
-- The final output table (01_data/03_kpi_table.csv) was used as the primary dataset for dashboard development.
+
+The final output table (01_data/03_kpi_table.csv) was used as the primary dataset for dashboard development.
 
 ---
 
