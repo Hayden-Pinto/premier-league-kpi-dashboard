@@ -59,7 +59,7 @@ See:
 
 ![02_overview](04_images/02_executive_overview.png)
 
-Provides a high-level summary of league standings and key performance indicators.
+Provides a high-level summary of league standings and key performance indicators. Filters selected to demonstrate cross-filtering and slicer functionality, allowing dynamic exploration of team data
 
 ---
 
