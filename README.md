@@ -1,31 +1,117 @@
-# premier-league-kpi-dashboard
-Premier League KPI Analytics Dashboard
-Overview
+⚽ Premier League 2024/25 KPI Analysis
+📌 Project Overview
 
-This project transforms multi-table football datasets into a structured KPI analytics model to compare team performance across a full season.
+This project analyses the 2024/25 Premier League season by transforming raw match-level data into structured team-level performance KPIs, which are then visualised in an interactive Power BI dashboard.
 
-Tools Used
+The objective was to build a complete analytical pipeline:
 
-SQL
+Ingest raw season data
 
-Power BI
+Transform match-level data into team-level records
 
-Excel
+Aggregate season statistics
 
-Methodology
+Engineer performance KPIs
 
-Joined match and team tables using SQL
+Deliver executive-ready dashboards
 
-Engineered performance KPIs
+This project demonstrates SQL-based data transformation, KPI engineering, and business-focused dashboard design.
 
-Built relational Power BI model
+🧱 Data Pipeline Overview
 
-Designed ranking dashboards
+The analytical workflow follows a structured transformation process:
 
-Dashboard Preview
+Raw match data and team reference data were ingested into SQL.
 
-(Add screenshot here later)
+Match data was enriched by joining team metadata.
 
-Outcome
+Each match was expanded into two team-level records (home and away).
 
-Created a decision-ready analytics dataset supporting benchmarking and performance analysis.
+Season-level metrics were aggregated per team.
+
+A league table was constructed and ordered by points.
+
+Custom KPIs were engineered for analytical use in Power BI.
+
+The final output table (03_kpi_table.csv) was used as the primary dataset for dashboard development.
+
+🗂 Project Structure
+01_data/
+    01_matches_table.csv
+    02_teams_table.csv
+    03_kpi_table.csv
+
+02_sql/
+    01_premier_league_kpi_pipeline.sql
+
+03_powerbi/
+    01_premier_league_2024_25_kpi_analysis.pbix
+
+04_images/
+    01_sql_kpi_transformation.png
+    02_executive_overview.png
+    03_performance_drivers_analysis.png
+    04_key_insights.png
+🧮 SQL Transformation
+
+The SQL pipeline performs:
+
+Table creation and ingestion of raw data
+
+Match-to-team row transformation
+
+Points calculation (Win = 3, Draw = 1, Loss = 0)
+
+Season-level aggregation
+
+Goal difference calculation
+
+KPI engineering for dashboard consumption
+
+See:
+02_sql/01_premier_league_kpi_pipeline.sql
+
+SQL Transformation Preview
+
+📊 Dashboard Overview
+1️⃣ Executive Overview
+
+Provides a high-level summary of league standings and key performance indicators.
+
+2️⃣ Performance Drivers Analysis
+
+Explores statistical relationships and drivers of success, including goal metrics, possession, and efficiency indicators.
+
+3️⃣ Key Insights
+
+Highlights analytical conclusions derived from KPI comparisons and team performance trends.
+
+🛠 Tools Used
+
+SQL (data transformation & aggregation)
+
+Power BI (data modelling & dashboard visualisation)
+
+GitHub (version control & documentation)
+
+🎯 Key Skills Demonstrated
+
+Data transformation pipeline design
+
+Relational joins & structured aggregation
+
+KPI engineering
+
+Data modelling for BI tools
+
+Executive-level dashboard presentation
+
+Analytical storytelling
+
+🚀 Outcome
+
+This project demonstrates the ability to move from raw datasets to actionable insight using a structured analytical workflow:
+
+Raw Data → SQL Transformation → KPI Engineering → Business Dashboard
+
+It reflects a real-world analytics process, combining technical SQL development with business-focused data visualisation.
