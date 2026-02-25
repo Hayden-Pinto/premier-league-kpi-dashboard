@@ -1,4 +1,22 @@
--- 1. Load matches table
+/* ============================================================
+   PROJECT: Premier League 2024/25 KPI Analysis
+   AUTHOR: Hayden Pinto
+   OBJECTIVE:
+   Transform match-level raw data into a structured,
+   team-level KPI dataset for Power BI dashboard reporting.
+============================================================ */
+
+/* ============================================================
+   1. RAW DATA INGESTION – MATCHES TABLE
+   ------------------------------------------------------------
+   Source: 2024/25 Premier League match dataset (publicly available)
+   Action:
+   - Created matches table
+   - Inserted full season match-level data
+   - Contains match statistics such as goals, possession,
+     shots, and team identifiers
+============================================================ */
+
 DROP TABLE IF EXISTS matches;
 CREATE TABLE matches (
     gameweek TEXT,
@@ -495,7 +513,15 @@ INSERT INTO matches (gameweek, kickoff_time, home_team, home_team_elo, home_scor
 INSERT INTO matches (gameweek, kickoff_time, home_team, home_team_elo, home_score, away_score, away_team, away_team_elo, finished, match_id, match_url, home_possession, away_possession, home_expected_goals_xg, away_expected_goals_xg, home_total_shots, away_total_shots, home_shots_on_target, away_shots_on_target, home_big_chances, away_big_chances, home_big_chances_missed, away_big_chances_missed, home_accurate_passes, away_accurate_passes, home_accurate_passes_pct, away_accurate_passes_pct, home_fouls_committed, away_fouls_committed, home_corners, away_corners, home_xg_open_play, away_xg_open_play, home_xg_set_play, away_xg_set_play, home_non_penalty_xg, away_non_penalty_xg, home_xg_on_target_xgot, away_xg_on_target_xgot, home_shots_off_target, away_shots_off_target, home_blocked_shots, away_blocked_shots, home_hit_woodwork, away_hit_woodwork, home_shots_inside_box, away_shots_inside_box, home_shots_outside_box, away_shots_outside_box, home_passes, away_passes, home_own_half, away_own_half, home_opposition_half, away_opposition_half, home_accurate_long_balls, away_accurate_long_balls, home_accurate_long_balls_pct, away_accurate_long_balls_pct, home_accurate_crosses, away_accurate_crosses, home_accurate_crosses_pct, away_accurate_crosses_pct, home_throws, away_throws, home_touches_in_opposition_box, away_touches_in_opposition_box, home_offsides, away_offsides, home_yellow_cards, away_yellow_cards, home_red_cards, away_red_cards, home_tackles_won, away_tackles_won, home_tackles_won_pct, away_tackles_won_pct, home_interceptions, away_interceptions, home_blocks, away_blocks, home_clearances, away_clearances, home_keeper_saves, away_keeper_saves, home_duels_won, away_duels_won, home_ground_duels_won, away_ground_duels_won, home_ground_duels_won_pct, away_ground_duels_won_pct, home_aerial_duels_won, away_aerial_duels_won, home_aerial_duels_won_pct, away_aerial_duels_won_pct, home_successful_dribbles, away_successful_dribbles, home_successful_dribbles_pct, away_successful_dribbles_pct, fotmob_id, stats_processed, player_stats_processed) VALUES ('33', '2025-04-20T15:30:00', '13', '1598.74', '0', '0', '14', '2014.23', 'True', '24-25-prem-leicester-city-vs-liverpool', '/matches/leicester-city-vs-liverpool/2ci06a#4506549', '38', '62', '0.08', '0.83', '2', '15', '0', '7', '0', '3', '0', '3', '136', '260', '74', '88', '7', '3', '0', '10', '0.05', '0.7', '0.04', '0.13', '0.08', '0.83', '0', '0.3', '2', '4', '0', '4', '1', '1', '1', '12', '1', '3', '183', '297', '95', '117', '41', '143', '8', '14', '26', '56', '2', '8', '67', '38', '15', '11', '6', '21', '2', '1', '0', '0', '0', '0', '7', '9', '88', '100', '3', '3', '5', '0', '26', '13', '6', '0', '20', '31', '11', '20', '35', '65', '9', '11', '45', '55', '0', '5', '0', '45', '4506549', 'True', 'True');
 INSERT INTO matches (gameweek, kickoff_time, home_team, home_team_elo, home_score, away_score, away_team, away_team_elo, finished, match_id, match_url, home_possession, away_possession, home_expected_goals_xg, away_expected_goals_xg, home_total_shots, away_total_shots, home_shots_on_target, away_shots_on_target, home_big_chances, away_big_chances, home_big_chances_missed, away_big_chances_missed, home_accurate_passes, away_accurate_passes, home_accurate_passes_pct, away_accurate_passes_pct, home_fouls_committed, away_fouls_committed, home_corners, away_corners, home_xg_open_play, away_xg_open_play, home_xg_set_play, away_xg_set_play, home_non_penalty_xg, away_non_penalty_xg, home_xg_on_target_xgot, away_xg_on_target_xgot, home_shots_off_target, away_shots_off_target, home_blocked_shots, away_blocked_shots, home_hit_woodwork, away_hit_woodwork, home_shots_inside_box, away_shots_inside_box, home_shots_outside_box, away_shots_outside_box, home_passes, away_passes, home_own_half, away_own_half, home_opposition_half, away_opposition_half, home_accurate_long_balls, away_accurate_long_balls, home_accurate_long_balls_pct, away_accurate_long_balls_pct, home_accurate_crosses, away_accurate_crosses, home_accurate_crosses_pct, away_accurate_crosses_pct, home_throws, away_throws, home_touches_in_opposition_box, away_touches_in_opposition_box, home_offsides, away_offsides, home_yellow_cards, away_yellow_cards, home_red_cards, away_red_cards, home_tackles_won, away_tackles_won, home_tackles_won_pct, away_tackles_won_pct, home_interceptions, away_interceptions, home_blocks, away_blocks, home_clearances, away_clearances, home_keeper_saves, away_keeper_saves, home_duels_won, away_duels_won, home_ground_duels_won, away_ground_duels_won, home_ground_duels_won_pct, away_ground_duels_won_pct, home_aerial_duels_won, away_aerial_duels_won, home_aerial_duels_won_pct, away_aerial_duels_won_pct, home_successful_dribbles, away_successful_dribbles, home_successful_dribbles_pct, away_successful_dribbles_pct, fotmob_id, stats_processed, player_stats_processed) VALUES ('36', '2025-05-11T13:15:00', '1', '1813.19', '0', '2', '21', '1731.83', 'True', '24-25-prem-manchester-united-vs-west-ham-united', '/matches/west-ham-united-vs-manchester-united/2yi6pt#4506577', '52', '48', '2.28', '1.56', '20', '9', '5', '4', '4', '3', '4', '1', '444', '405', '90', '87', '3', '13', '8', '5', '1.17', '1.41', '1.11', '0.15', '2.28', '1.56', '1.22', '2.56', '11', '3', '4', '2', '0', '0', '11', '8', '9', '1', '494', '468', '188', '284', '256', '121', '30', '14', '71', '35', '10', '3', '32', '20', '17', '13', '35', '20', '0', '2', '0', '1', '0', '0', '11', '13', '50', '65', '3', '8', '2', '4', '13', '20', '2', '5', '47', '43', '36', '30', '55', '45', '11', '13', '46', '54', '2', '7', '13', '33', '4506577', 'True', 'True');
 
--- 2. Load teams table
+/* ============================================================
+   2. RAW DATA INGESTION – TEAMS TABLE
+   ------------------------------------------------------------
+   Source: Public team reference dataset
+   Action:
+   - Created teams table
+   - Inserted team metadata
+   - Used to map team IDs to team names
+============================================================ */
 
 DROP TABLE IF EXISTS teams;
 CREATE TABLE teams (
@@ -535,8 +561,15 @@ INSERT INTO teams (code, id, name, short_name, strength, strength_overall_home, 
 INSERT INTO teams (code, id, name, short_name, strength, strength_overall_home, strength_overall_away, strength_attack_home, strength_attack_away, strength_defence_home, strength_defence_away, pulse_id, elo) VALUES ('21', '19', 'West Ham', 'WHU', '3', '1090', '1100', '1090', '1090', '1090', '1110', '25', '1748');
 INSERT INTO teams (code, id, name, short_name, strength, strength_overall_home, strength_overall_away, strength_attack_home, strength_attack_away, strength_defence_home, strength_defence_away, pulse_id, elo) VALUES ('39', '20', 'Wolves', 'WOL', '3', '1125', '1145', '1100', '1120', '1150', '1170', '38', '1733');
 
-
--- 3. Created a table (matches_cleaned) where the Teams table was joined onto the Matches table. Then filtering out only the data we need.
+/* ============================================================
+   3. MATCH DATA CLEANING & ENRICHMENT
+   ------------------------------------------------------------
+   Table Created: matches_cleaned
+   Action:
+   - Joined matches table to teams table using team IDs
+   - Selected relevant performance metrics
+   - Standardised and prepared match-level data for restructuring
+============================================================ */
 
 DROP TABLE  IF EXISTS matches_cleaned;
 CREATE TABLE matches_cleaned AS
@@ -556,7 +589,17 @@ JOIN teams AS t1
 JOIN teams AS t2 
 	ON m.away_team = t2.id;
 
--- 4. Created a Table which split each match into two rows (One for the Home team and One for the Away team).
+/* ============================================================
+   4. MATCH-TO-TEAM TRANSFORMATION
+   ------------------------------------------------------------
+   Table Created: teams_messy
+   Action:
+   - Converted each match into two rows:
+     one for the home team and one for the away team
+   - Extracted team-specific statistics
+   - Calculated match outcome points (Win = 3, Draw = 1, Loss = 0)
+   - Prepared data for season-level aggregation
+============================================================ */
 
 DROP TABLE IF EXISTS teams_messy;
 
@@ -569,7 +612,8 @@ SELECT  home_team AS team,
 		home_possession AS possession,
 		away_total_shots AS shots_faced,
 		CASE WHEN home_score > away_score THEN 3
-			 WHEN home_score = away_score
+			 WHEN home_score = away_score THEN 1
+			 ELSE 0 END AS points
 FROM matches_cleaned
 
 UNION ALL
@@ -580,11 +624,26 @@ SELECT  away_team AS team,
 		away_total_shots AS total_shots,
 		away_shots_on_target AS total_shots_on_target,
 		away_possession AS possession,
-		home_total_shots AS shots_faced
+		home_total_shots AS shots_faced,
+		CASE WHEN away_score > home_score THEN 3
+			 WHEN away_score = home_score THEN 1
+			 ELSE 0 END AS points
 FROM matches_cleaned
 ;
 
--- 5. Created a table consisitng of the complete data for each Team.
+/* ============================================================
+   5. SEASON AGGREGATION – TEAM SUMMARY
+   ------------------------------------------------------------
+   Table Created: teams_cleaned
+   Action:
+   - Aggregated match-level data to team-level totals
+   - Calculated season metrics:
+       • Total Goals
+       • Total Points
+       • Average Possession
+       • Other performance indicators
+   - Grouped by team
+============================================================ */
 
 DROP TABLE IF EXISTS teams_cleaned;
 
@@ -599,7 +658,19 @@ SELECT
 FROM teams_messy
 GROUP BY team;
 
--- 6. Created a League table consisting of the important data needed to calculate the KPIs
+/* ============================================================
+   5. SEASON AGGREGATION – TEAM SUMMARY
+   ------------------------------------------------------------
+   Table Created: teams_cleaned
+   Action:
+   - Aggregated match-level data to team-level totals
+   - Calculated season metrics:
+       • Total Goals
+       • Total Points
+       • Average Possession
+       • Other performance indicators
+   - Grouped by team
+============================================================ */
 
 DROP TABLE IF EXISTS final_table;
 
@@ -619,7 +690,15 @@ SELECT
 FROM teams_cleaned
 ORDER BY total_points DESC;
 
--- 7. Created the KPI table
+/* ============================================================
+   7. KPI ENGINEERING
+   ------------------------------------------------------------
+   Table Created: kpis
+   Action:
+   - Transformed season statistics into analytical KPIs
+   - Applied custom equations and performance ratios
+   - Structured dataset optimised for Power BI visualisation
+============================================================ */
 
 DROP TABLE IF EXISTS KPI_table;
 
