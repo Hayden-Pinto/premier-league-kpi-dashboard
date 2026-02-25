@@ -79,16 +79,6 @@ Highlights analytical conclusions derived from KPI comparisons and team performa
 
 ---
 
-## 🚀 Outcome
-
-This project demonstrates the ability to move from raw datasets to actionable insight using a structured analytical workflow:
-
-Raw Data → SQL Transformation → KPI Engineering → Business Dashboard
-
-It reflects a real-world analytics process, combining technical SQL development with business-focused data visualisation.
-
----
-
 ## 🛠 Tools Used
 
 - SQL (data transformation & aggregation)
@@ -127,5 +117,16 @@ premier_league_kpi_analysis/
 │   ├── 03_performance_drivers_analysis.png
 │   └── 04_key_insights.png
 └── README.md   
-    
-    
+```
+---
+   
+## 🚀 Outcome
+
+This project demonstrates the ability to move from raw datasets to actionable insight using a structured analytical workflow:
+
+Raw Data → SQL Transformation → KPI Engineering → Business Dashboard
+
+It reflects a real-world analytics process, combining technical SQL development with business-focused data visualisation.
+
+---
+
